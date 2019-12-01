@@ -1,0 +1,56 @@
+// breakpoints
+  $mobile-width: 320px;
+  $small-width: 576px;
+  $tablet-width: 768px;
+  $laptop-width: 1050px;
+// eof breakpoints
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}){
+    @content;
+  }
+}
+@mixin nonmob {
+  @media (min-width: #{$tablet-width}){
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$laptop-width - 1px}){
+    @content;
+  }
+}
+
+@mixin selection {
+  & ::selection {
+    @content;
+  }
+  & ::-moz-selection {
+    @content;
+  }
+}
+
+@mixin cont() {
+  @include make-container();
+  @include make-container-max-widths();
+}
+@mixin cont-full() {
+  @include make-container();
+}
+@mixin row() {
+  @include make-row();
+}
+
+@mixin col($n, $total:"") {
+  @include make-col-ready();
+  @include make-col($n);
+
+  @if $total != "" {
+    @include make-col($n, $total);
+  }
+}
+
+@mixin offset($n) {
+  @include make-col-offset($n);
+}

@@ -1,0 +1,29 @@
+// colors
+  $c-blue: #1F65D9;
+  $c-bg: #233148;
+// eof colors
+
+// fonts
+  $f-proxima: "Proxima Nova", "Roboto", arial, sans-serif;
+
+  $f-stack: $f-proxima;
+// eof fonts
+
+
+// bootstrap grid overrides
+  $grid-gutter-width: 0px;
+
+  $grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1280px
+  );
+
+  $container-max-widths: (
+    sm: 100%,
+    md: 100%,
+    lg: 100%,
+    xl: 1200px
+  );

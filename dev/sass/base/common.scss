@@ -1,0 +1,63 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input, textarea, button {
+  font-family: inherit;
+  outline: none;
+  
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: $f-stack;
+  font-size: 16px;
+  letter-spacing: .022em;
+  background-color: $c-bg;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.2;
+
+  @include selection {
+    background: #FCCF18;
+    color: $c-bg;
+  }
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+nav {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}

@@ -1,0 +1,128 @@
+.greeting {
+  @extend %container;
+
+  padding-top: 132px;
+  background-color: $c-bg;
+  color: #fff;
+  margin-bottom: 89px;
+
+  @include mobile {
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  &__title {
+    @extend %title;
+    @extend %title-decorated;
+    @extend %animate;
+
+    position: relative;
+    z-index: 2;
+    margin-bottom: 108px;
+
+    @include mobile {
+      margin-bottom: 42px;
+    }
+  }
+  &__grid {
+    @include row();
+
+    position: relative;
+
+    justify-content: center;
+
+    &:after {
+      content: "";
+      width: 88.2%;
+      height: 120%;
+      position: absolute;
+      top: 19.5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-image: url("../img/bg-figure.svg");
+      z-index: 1;
+      opacity: .02;
+
+      @include mobile {
+        max-width: 1300px;
+        width: 264vw;
+        top: 27%;
+      }
+    }
+  }
+  &__items {
+    @include col(10);
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    @include tablet {
+      @include col(12);
+    }
+  }
+  &__item {
+    @extend %animate;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin-bottom: 84px;
+    padding-right: 50px;
+
+    @include mobile {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 29px;
+    }
+
+    &:nth-of-type(2n) {
+      padding-right: 10px;
+      padding-left: 49px;
+
+      @include mobile {
+        padding: 0;
+      }
+    }
+    &:last-of-type {
+      @include mobile {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  &__item-icon {
+    width: 52px;
+    margin-bottom: 18px;
+    user-select: none;
+
+    @include mobile {
+      width: 36px;
+      margin-bottom: 13px;
+    }
+  }
+  &__item-title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 21px;
+
+    @include mobile {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+  }
+  &__item-description {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+    color: #8796ae;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+}

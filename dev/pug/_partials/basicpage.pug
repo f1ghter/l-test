@@ -1,0 +1,12 @@
+include mixins
+include bemto
+- set_bemto_settings({ modifier: '--' })
+
+doctype html
+html(lang="ru")
+  block head
+    +head(title)
+  body
+    block content
+   
+    include scripts
